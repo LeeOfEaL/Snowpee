@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: georgian;
+			color: black;
+        }
+
+        body {
+            background-image: url('https://wallpaperaccess.com/full/934072.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .login-container {
+            width: 90%;
+			position: absolute;
+			top: 50%;
+			left: 40%;
+			transform: translate(-50%, -50%);
+            max-width: 540px;
+            background-color: #AE794B;
+            padding: 60px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-align: center;
+			margin: 20px;
+        }
+
+        .login-container h2 {
+            margin-bottom: 20px;
+            color: white;
+
+        }
+
+        .login-container input[type="text"],
+        .login-container input[type="password"] {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border: 1px solid #dddfe2;
+            border-radius: 6px;
+            box-sizing: border-box;
+            text-align: start;
+        }
+
+        .login-container button {
+            width: 100%;
+            padding: 12px;
+            background-color: #6A452C;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .login-container button:hover {
+            background-color: #8B5A2B;
+        }
+
+        .signup-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 15px;
+            gap: 5px;
+        }
+
+        .signup-container p {
+            font-size: 16px;
+            color: white;
+        }
+
+        .signup-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #6A452C;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 600px) {
+            .login-container {
+                width: 95%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-container">
+    <h2 style="color: black; font-size: 2em;">LOGIN TO BOOKLIST</h2>
+
+    <form action="_HomePage.html" method="post">
+        <input type="text" style="font-family: Arial; font-size: 1em;" name="username" placeholder="Username">  
+        <input type="password" style="font-family: Arial; font-size: 1em;" name="password" placeholder="Password"> 
+        <button type="submit" style="font-family: Arial; font-size: 1em;">Login</button> 
+		
+    </form>
+
+    <div class="signup-container">
+        <p style="color: black; font-size: 1.2em;">You don't have an account?</p>
+			<a href="SIGN UP PAGE.html">
+			<button type="button" style="font-family: Arial; font-size: 1em; width: 525%; transform: translate(-40.5%, -5%); padding: 15px; background-color: #6A452C;color: white; border: none; border-radius: 6px; font-size: 14px; cursor: pointer;">Sign Up</button>
+			</a>
+    </div>
+</div>
+<script>
+ function toggleForms() {
+        let login = document.querySelector('.container');
+        let signUp = document.getElementById('signUpContainer');
+
+        if (login.style.display === 'none') {
+            login.style.display = 'block';
+            signUp.style.display = 'none';
+        } else {
+            login.style.display = 'none';
+            signUp.style.display = 'block';
+        }
+	}
+</script>
+</body>
+</html>

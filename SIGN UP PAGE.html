@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up & Login</title>
+    <style>
+        body {
+            font-family: georgian;
+            font-size: 19px;
+            background-image: url('https://wallpaperaccess.com/full/934072.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            width: 90%;
+			position: absolute;
+			top: 50%;
+			left: 40%;
+			transform: translate(-50%, -50%);
+            max-width: 500px;
+            background-color: #AE794B;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-align: center;
+            margin: 20px;
+        }
+
+        input, select {
+            width: 90%;
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 90%;
+            padding: 12px;
+            background-color: #6A452C;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                width: 95%;
+                margin: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>SIGN UP TO BOOKLIST</h2>
+    <form action="booklist.html" method="post">
+        <input type="text" name="firstname" placeholder="First Name" required>
+        <input type="text" name="lastname" placeholder="Last Name" required>
+
+        <label for="gender"></label>
+        <select id="gender" name="gender" required>
+            <option value="">Select Gender</option>
+            <option value="FEMALE">FEMALE</option>
+            <option value="MALE">MALE</option>
+        </select>
+
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <input type="password" name="confirm-password" placeholder="Confirm Password" required>
+
+        <button type="submit">Sign Up</button>
+    </form>
+    <p>Already have an account? <button onclick="toggleForms()">Log In</button></p>
+</div>
+
+<div class="container" style="display: none;" id="loginContainer">
+    <h2>LOGIN TO BOOKLIST</h2>
+    <form action="booklist.html" method="post">
+        <input type="text" name="username" placeholder="Username"> 
+        <input type="password" name="password" placeholder="Password">
+        <button type="submit">Login</button>
+    </form>
+    <p>You don't have an account? <button onclick="toggleForms()">Sign Up</button></p>
+</div>
+
+<script>
+    function toggleForms() {
+        let signUp = document.querySelector('.container');
+        let login = document.getElementById('loginContainer');
+
+        if (signUp.style.display === 'none') {
+            signUp.style.display = 'block';
+            login.style.display = 'none';
+        } else {
+            signUp.style.display = 'none';
+            login.style.display = 'block';
+        }
+    }
+</script>
+
+</body>
+</html>
